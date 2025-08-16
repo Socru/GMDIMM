@@ -14,65 +14,72 @@ hamburger.addEventListener("click", () => {
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
 
-  // Espera 2s y oculta con fade
+  // Mostrar 2 segundos y luego desaparecer
   setTimeout(() => {
     loader.classList.add('oculto');
+
+    // Remover del DOM después del fade
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
   }, 2000);
 });
 
-// GMDI
-const gmdiImgs = [
-  "assets/img/GMDI/1a.jpg",
-  "assets/img/GMDI/1.jpg",
-  "assets/img/GMDI/3.jpg",
-  "assets/img/GMDI/4.jpg",
-  "assets/img/GMDI/5.jpg",
-  "assets/img/GMDI/6.jpg",
-  "assets/img/GMDI/7.JPG"
-];
-let gmdiIndex = 0;
-setInterval(() => {
-  gmdiIndex = (gmdiIndex + 1) % gmdiImgs.length;
-  document.querySelector("#gmdi .catalogo-img").src = gmdiImgs[gmdiIndex];
-}, 3000); // cambia cada 3 segundos
 
-// MM
-const mmImgs = [
-  "assets/img/MM/a.jpeg",
-  "assets/img/MM/b.jpeg",
-  "assets/img/MM/c.jpeg",
-  "assets/img/MM/d.jpeg",
-  "assets/img/MM/e.jpeg",
-  "assets/img/MM/f.jpeg",
-  "assets/img/MM/g.jpeg",
-  "assets/img/MM/h.jpeg",
-  "assets/img/MM/i.jpeg",
-  "assets/img/MM/j.jpeg",
-  "assets/img/MM/k.jpeg"
-];
-let mmIndex = 0;
-setInterval(() => {
-  mmIndex = (mmIndex + 1) % mmImgs.length;
-  document.querySelector("#mm .catalogo-img").src = mmImgs[mmIndex];
-}, 3000);
 
-// Renders
-const rendersImgs = [
-  "assets/img/render/rend1.jpeg",
-  "assets/img/render/rend2.jpeg",
-  "assets/img/render/rend3.jpeg",
-  "assets/img/render/rend4.jpeg",
-  "assets/img/render/rend5.jpeg",
-  "assets/img/render/rend6.jpeg",
-  "assets/img/render/rend7.jpeg",
-  "assets/img/render/rend8.jpeg",
-  "assets/img/render/rend9.jpeg"
-];
-let rendersIndex = 0;
-setInterval(() => {
-  rendersIndex = (rendersIndex + 1) % rendersImgs.length;
-  document.querySelector("#renders .catalogo-img").src = rendersImgs[rendersIndex];
-}, 3000);
+document.querySelectorAll('.carousel').forEach(carousel => {
+  const images = Array.from(carousel.querySelectorAll('img'));
+  let currentIndex = 0;
+
+  const showImage = (index) => {
+    images.forEach((img, i) => img.style.display = i === index ? 'block' : 'none');
+  };
+
+  showImage(currentIndex);
+
+  carousel.querySelector('.prev').addEventListener('click', () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  });
+
+  carousel.querySelector('.next').addEventListener('click', () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  });
+});
+
+
+
+// Selecciona el contenedor principal del carrusel
+const proyectosCarousel = document.querySelector('#proyectos > .proyecto-item');
+const track = proyectosCarousel.querySelector('.carrete-track');
+const slides = Array.from(track.querySelectorAll('.proyecto'));
+const prevBtn = proyectosCarousel.querySelector('.prev');
+const nextBtn = proyectosCarousel.querySelector('.next');
+
+let currentIndex = 0;
+
+// Función para mostrar la imagen actual
+const showSlide = (index) => {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? 'block' : 'none';
+  });
+};
+
+// Inicializa mostrando la primera imagen
+showSlide(currentIndex);
+
+// Eventos de botones
+prevBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+  showSlide(currentIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+});
+
 
 // Modal formulario
 const modal = document.getElementById("modalFormulario");
@@ -115,4 +122,28 @@ document.getElementById("formularioContacto").addEventListener("submit", (e) => 
     console.error(error);
     alert("Error al enviar el mensaje, intenta nuevamente.");
   });
+});
+
+
+const btnEs = document.getElementById("btn-es");
+const btnEn = document.getElementById("btn-en");
+
+// Detecta idioma inicial por la página
+if(window.location.href.includes("indexEn.html")) {
+  btnEn.classList.add("activo");
+} else {
+  btnEs.classList.add("activo");
+}
+
+// Cambiar idioma al hacer click
+btnEs.addEventListener("click", () => {
+  window.location.href = "index.html";
+  btnEs.classList.add("activo");
+  btnEn.classList.remove("activo");
+});
+
+btnEn.addEventListener("click", () => {
+  window.location.href = "indexEn.html";
+  btnEn.classList.add("activo");
+  btnEs.classList.remove("activo");
 });
