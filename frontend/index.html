@@ -251,16 +251,35 @@
 
 
 <section id="contacto">
-    <h3>Contáctanos</h3>
-   <div class="contacto-container" id="contacto">
-     
-  <a href="mailto:grupomenro25@gmail.com"   class="contacto-item">📧 Correo: grupomenro25@gmail.com </a> 
-  <a href="https://wa.me/52524333250357" target="_blank" class="contacto-item"> <i class="fa-brands fa-whatsapp"></i> WhatsApp: +52 4333250357   </a>
-  
-  <!-- Botón para abrir formulario -->
-  <button id="abrirFormulario" class="contacto-item">📝 Enviar mensaje</button>
-</div>
+  <h3>Contáctanos</h3>
+  <div class="contacto-container">
+    
+    <!-- Correo -->
+    <a href="mailto:grupomenro25@gmail.com" class="contacto-item">
+      📧 Correo: grupomenro25@gmail.com
+    </a>
+
+    <!-- WhatsApp con icono local -->
+    <a href="https://wa.me/52524333250357" target="_blank" class="contacto-item">
+      WhatsApp: +52 4333250357
+    </a>
+    <img src="assets/img/whats.jpeg" alt="WhatsApp" style="width:150px; height:150px; margin-right:8px; vertical-align:middle;">
+
+    <!-- Botón abrir formulario -->
+    <button id="abrirFormulario" class="contacto-item">
+      📝 Enviar mensaje
+    </button>
+  </div>
+
+  <!-- Mapa de Google -->
+  <div class="mapa-contacto" style="margin-top:20px;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d933.790816755557!2d-100.37991219319507!3d20.581389093956904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDM0JzUxLjAiTiAxMDDCsDIyJzQ0LjYiVw!5e0!3m2!1ses!2smx!4v1755359467850!5m2!1ses!2smx" 
+      width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 </section>
+
 
 <!-- Modal del formulario -->
 <div id="modalFormulario" class="modal">
