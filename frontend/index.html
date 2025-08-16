@@ -166,7 +166,6 @@
   <h2>Catálogos de Proyectos</h2>
   <div class="catalogo-container">
 
-    <!-- GMDI -->
     <div class="catalogo" id="gmdi">
       <h3>GMDI</h3>
       <div class="carousel">
@@ -372,6 +371,27 @@
   (function(){
     emailjs.init("5Zl3lDXLWB3yV2Of3"); // reemplaza con tu user ID de EmailJS
   })();
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const btnEs = document.getElementById("btn-es");
+  const btnEn = document.getElementById("btn-en");
+
+  if (!btnEs || !btnEn) return;
+
+  const currentPage = window.location.pathname.split("/").pop(); // obtiene "index.html" o "ingles.html"
+
+  // Activar bandera
+  if (currentPage === "ingles.html") {
+    btnEn.classList.add("activo");
+  } else {
+    btnEs.classList.add("activo");
+  }
+
+  // Cambiar idioma
+  btnEs.addEventListener("click", () => window.location.href = "index.html");
+  btnEn.addEventListener("click", () => window.location.href = "ingles.html");
+});
 </script>
 <a href="https://wa.me/524333250357" target="_blank" class="whatsapp-float">
   <i class="fab fa-whatsapp"></i>
