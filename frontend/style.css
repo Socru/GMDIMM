@@ -1302,9 +1302,7 @@ button:hover, .btn:hover {
     font-size: 0.9rem;
   }
 
-  #catalogos .catalogo-img {
-    height: 150px;
-  }
+ 
 
   #catalogos h2 {
     font-size: 1.4rem;
@@ -1355,10 +1353,7 @@ button:hover, .btn:hover {
     transform: translateY(0) scale(1);
   }
 }
-#catalogos .catalogo-img {
-    height: 250px;
-    width: 400px;
-}
+
 
  
 
