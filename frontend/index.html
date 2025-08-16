@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 </head>
+
 <body>
   <!-- Loader 
   <div id="loader">
@@ -36,6 +37,23 @@
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
+<div class="idioma-selector">
+  <button id="btn-es" class="bandera">🇲🇽</button>
+  <button id="btn-en" class="bandera">🇺🇸</button>
+  <button id="play-music">▶️Reproducir</button>
+
+<audio id="bg-music" src="assets/sounds/sound.mp3" loop></audio>
+
+<script>
+  const music = document.getElementById("bg-music");
+  const btn = document.getElementById("play-music");
+
+  btn.addEventListener("click", () => {
+    music.play();
+  });
+</script>
+
+</div>
 
   </header>
 
@@ -50,11 +68,17 @@
 
     <div class="inicio-texto">
       <h2>GRUPO MENRO DESARROLLADOR INMOBILIARIO / MM Obra Civil Integral</h2>
+      <h3 class="subtitulo">
+        Afiliados a la <strong>Cámara Nacional de la Industria de la Construcción</strong> y con proyectos realizados en toda la República: <strong>estatales, federales y civiles</strong>.
+      </h3>
       <p>
         Nuestras empresas <strong>GRUPO MENRO DESARROLLADOR INMOBILIARIO, S.A DE C.V</strong> y <strong>MM Obra Civil Integral S.A de C.V</strong> combinan experiencia y profesionalismo en proyectos de desarrollo inmobiliario y obra civil integral.
         Cumplimos con las principales normas internacionales, garantizando calidad, seguridad y sostenibilidad en nuestros proyectos como son: <strong>ISO 9001, ISO 14001, ISO 45001, ISO 19650</strong>.
         </p>
-
+        <h2>MM Obra Civil Integral</h2>
+        <p>
+        Nuestra Estructura de Alto Valor integra las certificaciones en <strong>ISO 9001-2015, ISO 14001-2015, e ISO 45001-2018</strong>, garantizando calidad, seguridad y sostenibilidad en nuestros proyectos.
+        </p>
     </div>
 
     <div class="inicio-logo derecha">
@@ -138,61 +162,94 @@
         </section>
 
 
-
 <section id="catalogos">
   <h2>Catálogos de Proyectos</h2>
   <div class="catalogo-container">
+
+    <!-- GMDI -->
     <div class="catalogo" id="gmdi">
       <h3>GMDI</h3>
-      <img src="assets/img/GMDI/1a.jpg" alt="GMDI" class="catalogo-img">
+      <div class="carousel">
+        <button class="prev">&#10094;</button>
+        <img src="assets/img/GMDI/1.jpg" alt="GMDI" class="catalogo-img">
+        <img src="assets/img/GMDI/2.jpg" alt="GMDI" class="catalogo-img">
+        <img src="assets/img/GMDI/3.jpg" alt="GMDI" class="catalogo-img">
+        <img src="assets/img/GMDI/4.jpg" alt="GMDI" class="catalogo-img">
+        <img src="assets/img/GMDI/5.jpg" alt="GMDI" class="catalogo-img">
+        <img src="assets/img/GMDI/6.jpg" alt="GMDI" class="catalogo-img">
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
+    <!-- MM -->
     <div class="catalogo" id="mm">
       <h3>MM</h3>
-      <img src="assets/img/MM/a.jpeg" alt="MM" class="catalogo-img">
+      <div class="carousel">
+        <button class="prev">&#10094;</button>
+        <img src="assets/img/MM/a.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/b.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/c.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/d.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/e.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/f.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/g.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/h.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/i.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/j.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/k.jpeg" alt="MM" class="catalogo-img">
+        <button class="next">&#10095;</button>
+      </div>
     </div>
 
+    <!-- Renders -->
     <div class="catalogo" id="renders">
       <h3>Renders</h3>
-      <img src="assets/img/render/rend1.jpeg" alt="Renders" class="catalogo-img">
+      <div class="carousel">
+        <button class="prev">&#10094;</button>
+        <img src="assets/img/render/rend1.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend2.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend3.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend4.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend5.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend6.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend7.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend8.jpeg" alt="Renders" class="catalogo-img">
+        <img src="assets/img/render/rend9.jpeg" alt="Renders" class="catalogo-img">
+        <button class="next">&#10095;</button>
+      </div>
     </div>
+
   </div>
 </section>
 
 
-    <section id="iso">
-  <h3>Normas ISO aplicadas en nuestros proyectos</h3>
+   <section id="iso">
+  <h3>Certificaciones ISO aplicadas en MM Obra Civil Integral</h3>
   <div class="iso-container">
     <div class="iso-card">
-      <h4>ISO 9001</h4>
-      <p>Sistemas de gestión de calidad, asegurando procesos eficientes y satisfacción del cliente.</p>
+      <h4>ISO 9001-2015</h4>
+      <p>
+        Norma internacional que establece los requisitos para un sistema de gestión de calidad. 
+        Permite a MM garantizar procesos eficientes, consistencia en la entrega de proyectos y la satisfacción de nuestros clientes.
+      </p>
     </div>
     <div class="iso-card">
-      <h4>ISO 14001</h4>
-      <p>Sistemas de gestión ambiental, minimizando impactos y promoviendo sostenibilidad.</p>
+      <h4>ISO 14001-2015</h4>
+      <p>
+        Norma para sistemas de gestión ambiental, enfocada en reducir los impactos ambientales de la actividad de la empresa. 
+        Asegura que MM opere de manera sostenible y cumpla con las regulaciones ambientales.
+      </p>
     </div>
     <div class="iso-card">
-      <h4>ISO 45001</h4>
-      <p>Seguridad y salud ocupacional para proteger a nuestro personal y cumplir regulaciones.</p>
-    </div>
-    <div class="iso-card">
-      <h4>ISO 50001</h4>
-      <p>Gestión energética, optimizando el consumo de energía en proyectos y edificaciones.</p>
-    </div>
-    <div class="iso-card">
-      <h4>ISO 26000</h4>
-      <p>Responsabilidad social, aplicando buenas prácticas éticas y sostenibles.</p>
-    </div>
-    <div class="iso-card">
-      <h4>ISO 21930</h4>
-      <p>Información ambiental de productos de construcción para evaluar impactos de materiales.</p>
-    </div>
-    <div class="iso-card">
-      <h4>ISO 19650</h4>
-      <p>Gestión de información mediante BIM, estandarizando proyectos digitales de construcción.</p>
+      <h4>ISO 45001-2018</h4>
+      <p>
+        Norma de gestión de seguridad y salud en el trabajo, diseñada para prevenir accidentes y enfermedades laborales. 
+        Garantiza que nuestro personal trabaje en un entorno seguro y saludable, cumpliendo con las regulaciones legales.
+      </p>
     </div>
   </div>
 </section>
+
 
 <section id="contacto">
     <h3>Contáctanos</h3>
@@ -239,6 +296,68 @@
 </div>
 
 
+<section id="proyectos">
+  <h2>Nuestros Proyectos</h2>
+
+  <div class="proyecto-item">
+    <button class="prev">&#10094;</button>
+    <div class="carrete-track">
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1a.png" alt="Proyecto 1" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1b.png" alt="Proyecto 2" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1c.png" alt="Proyecto 3" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1d.png" alt="Proyecto 4" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1e.png" alt="Proyecto 5" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1f.png" alt="Proyecto 6" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1g.png" alt="Proyecto 7" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1h.png" alt="Proyecto 8" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1i.png" alt="Proyecto 9" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1j.png" alt="Proyecto 10" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1k.png" alt="Proyecto 11" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1l.png" alt="Proyecto 12" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1m.png" alt="Proyecto 13" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1n.png" alt="Proyecto 14" class="proyecto-img">
+      </div>
+      <div class="proyecto">
+        <img src="assets/img/proyectos/1o.png" alt="Proyecto 15" class="proyecto-img">
+      </div>
+    </div>
+    <button class="next">&#10095;</button>
+  </div>
+</section>
+
+<section id="camara">
+  <div class="camara-container">
+    <h3>Cámara Nacional de la Industria de la Construcción</h3>
+    <img src="assets/img/logos/camara.png" alt="Logo Cámara" class="camara-logo">
+  </div>
+</section>
 
 
   </main>
