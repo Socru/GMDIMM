@@ -1,0 +1,1106 @@
+/* =========================
+   Reset básico
+   ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Loader general */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/* Fondo degradado animado */
+.loader-fondo {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, #0a2a43, #123c5c, #0a2a43, #123c5c);
+  background-size: 400% 400%;
+  animation: gradientAnim 6s ease infinite;
+}
+
+/* Animación de fondo */
+@keyframes gradientAnim {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Logo centrado con movimiento sutil */
+.loader-logo {
+  width: 150px;
+  z-index: 10;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Pulso animado */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Ocultar loader */
+#loader.oculto {
+  opacity: 0;
+  visibility: hidden;
+}
+
+
+/* =========================
+   Header
+   ========================= */
+header {
+  background: linear-gradient(135deg, #0a2a43, #123c5c);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #ef9e20;
+  animation: fadeDown 1s ease-in-out;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Animación título */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   Menú
+   ========================= */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ef9e20;
+  transition: width 0.3s;
+}
+
+nav a:hover {
+  color: #ef9e20;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   Botón hamburguesa
+   ========================= */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #ef9e20;
+  transition: transform 0.3s;
+}
+
+.hamburger:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   Main
+   ========================= */
+main {
+  padding: 100px 20px 50px;
+  text-align: center;
+}
+
+section {
+  margin-bottom: 80px;
+  animation: fadeIn 1.2s ease-in-out;
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* Efecto hover para TODAS las secciones */
+section:hover {
+  background: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   Títulos (h2 y h3 uniformes)
+   ========================= */
+section h2,
+section h3 {
+  font-size: 1.8rem;
+  color: #0a2a43;
+  margin-bottom: 20px;
+  position: relative;
+  transition: color 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+/* Línea decorativa ::after */
+section h2::after,
+section h3::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: #ef9e20;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transition: width 0.4s;
+}
+
+/* Animación del ::after al poner el mouse sobre la sección */
+section:hover h2::after,
+section:hover h3::after {
+  width: 120px;
+}
+
+/* Texto */
+section p {
+  max-width: 900px;
+  margin: 0 auto 15px;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: justify;
+  transition: color 0.3s;
+}
+
+/* Texto resalta en hover */
+section:hover h2, 
+section:hover h3,
+section:hover p {
+  color: #0a2a43;
+}
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+section:not(#inicio) strong {
+  color: #ef2020;
+  font-weight: bold;
+}
+
+/* =========================
+   Empresa
+   ========================= */
+.empresa-info p, .empresa-info ul {
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.7;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: justify;
+}
+
+.empresa-info ul {
+  list-style: disc;
+  padding-left: 25px;
+}
+
+.empresa-info ul li {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+.empresa-info strong {
+  color: #ef9e20;
+}
+.empresa-info {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.empresa-texto {
+  flex: 1;
+}
+
+.empresa-imagen {
+  flex: 1;
+}
+
+.empresa-imagen img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  object-fit: cover;
+}
+
+
+/* =========================
+   Layout en columnas (Misión y Visión)
+   ========================= */
+.columnas {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.columnas > div {
+  padding: 20px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.columnas > div:hover {
+  transform: translateY(-8px);
+  border-color: #0a2a43;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   Valores
+   ========================= */
+#valores {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#valores h3 {
+  font-size: 1.8rem;
+  color: #0a2a43;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Grid para los valores */
+#valores ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Cada valor como tarjeta */
+#valores ul li {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  font-weight: 500;
+  color: #0a2a43;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+#valores ul li::before {
+  display: block;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Emoji específico para cada valor */
+#valores ul li:nth-child(1)::before { content: "🤝"; } /* Orientación al cliente y equipo */
+#valores ul li:nth-child(2)::before { content: "🧭"; } /* Honestidad y certeza */
+#valores ul li:nth-child(3)::before { content: "🏗️"; } /* Compromiso con calidad e innovación */
+#valores ul li:nth-child(4)::before { content: "🌱"; } /* Responsabilidad social y ecológica */
+
+
+/* Hover sobre la tarjeta */
+#valores ul li:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  background: #f9f9f9;
+}
+
+/* =========================
+   Políticas
+   ========================= */
+#politicas {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+#politicas h3 {
+  font-size: 1.8rem;
+  color: #0a2a43;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+/* Contenedor de tarjetas de políticas */
+#politicas .politica-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  position: relative;
+}
+
+/* Icono específico para cada política */
+#politicas .politica-card h4::before {
+  margin-right: 10px;
+}
+
+/* Política de Calidad */
+#politicas .politica-card:nth-of-type(1) h4::before { content: "✅"; }
+
+/* Política Ambiental */
+#politicas .politica-card:nth-of-type(2) h4::before { content: "🌿"; }
+
+/* Política de Seguridad */
+#politicas .politica-card:nth-of-type(3) h4::before { content: "🛡️"; }
+
+
+
+/* Hover sobre la tarjeta */
+#politicas .politica-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  background: #f9f9f9;
+}
+
+/* Títulos dentro de la tarjeta */
+#politicas .politica-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #0a2a43;
+}
+
+/* Párrafos dentro de la tarjeta */
+#politicas .politica-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Sección Inicio profesional con letra moderada */
+#inicio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #f4f6f9 0%, #e9edf2 100%);
+  border-radius: 16px;
+  padding: 60px 20px;
+  margin-bottom: 80px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+#inicio::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+#inicio h2 {
+  font-size: 2rem; /* tamaño más cercano al resto del sitio */
+  color: #0a2a43;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.07);
+  animation: fadeInDown 1.2s ease-in-out;
+}
+
+#inicio p {
+  font-size: 1.1rem; /* ajustado al resto del contenido */
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #333;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+#inicio strong {
+  font-weight: 600; /* resalta solo con grosor */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Contenedor de Inicio con logos */
+#inicio .inicio-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  gap: 30px; /* espacio entre logos y texto */
+  flex-wrap: wrap; /* permite que los logos bajen en pantallas pequeñas */
+}
+
+/* Logos */
+#inicio .inicio-logo {
+  flex: 0 0 auto;
+}
+
+#inicio .logo-inicio {
+  height: 150px; /* ajusta según tu preferencia */
+  width: auto;
+  animation: floatLogo 2s ease-in-out infinite alternate;
+}
+
+.logo-izquierda {
+  position: absolute;  /* para poder moverlo libremente */
+  left: 20px;          /* distancia desde el borde izquierdo */
+  top: 200px;          /* distancia desde arriba: aumenta para bajarlo */
+  width: 80px;         /* tamaño del logo */
+  height: auto;
+}
+
+/* Animación suave de los logos */
+@keyframes floatLogo {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+/* Texto central */
+#inicio .inicio-texto {
+  max-width: 600px;
+  text-align: center;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  #inicio .inicio-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #inicio .inicio-texto {
+    max-width: 90%;
+  }
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  background: linear-gradient(135deg, #123c5c, #0a2a43);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   Botones
+   ========================= */
+button, .btn {
+  display: inline-block;
+  background: #0a2a43;
+  color: white;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover, .btn:hover {
+  background: #ef9e20;
+  color: #0a2a43;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(239,158,32,0.4);
+}
+
+/* =========================
+   Sección ISO
+   ========================= */
+#iso {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 20px;
+  text-align: center;
+}
+
+#iso h3 {
+  font-size: 1.8rem;
+  color: #0a2a43;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Contenedor de tarjetas ISO */
+#iso .iso-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  text-align: left;
+  position: relative;
+}
+
+/* Icono antes del título de cada ISO */
+#iso .iso-card h4::before {
+  content: "📄"; /* puedes cambiar por cualquier emoji o icono de documento */
+  margin-right: 10px;
+  color: #0a2a43;
+}
+
+/* Hover sobre la tarjeta */
+#iso .iso-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+  background: #f9f9f9;
+}
+
+/* Títulos dentro de la tarjeta */
+#iso .iso-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #0a2a43;
+}
+
+/* Párrafos dentro de la tarjeta */
+#iso .iso-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+#catalogos {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 20px;
+  text-align: center;
+}
+
+#catalogos h2 {
+  font-size: 2rem;
+  color: #0a2a43;
+  margin-bottom: 40px;
+}
+
+/* Contenedor de las columnas */
+.catalogo-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Cada columna */
+.catalogo {
+  flex: 1 1 30%;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.catalogo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.catalogo h3 {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  color: #0a2a43;
+}
+
+.catalogo-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 2px solid #0a2a43;
+}
+
+
+
+#contacto {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f4f6f9;
+  border-radius: 16px;
+  margin: 40px 0;
+}
+
+#contacto h2 {
+  font-size: 2rem;
+  color: #0a2a43;
+  margin-bottom: 20px;
+}
+
+.contacto-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contacto-item {
+  font-size: 1.1rem;
+  color: #0a2a43;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contacto-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Modal */
+.modal {
+  display: none; /* oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
+}
+
+.modal-contenido {
+  background: #fff;
+  margin: 10% auto;
+  padding: 30px 20px;
+  border-radius: 12px;
+  max-width: 400px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cerrar {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#formularioContacto input,
+#formularioContacto textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+#formularioContacto button {
+  width: 100%;
+  padding: 12px;
+  background: #0a2a43;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#formularioContacto button:hover {
+  background: #07406a;
+}
+
+/* =========================
+   Contacto
+   ========================= */
+.contacto-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 40px 0;
+}
+
+.contacto-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: #fff;
+  background: #0a2a43;
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.contacto-item:hover {
+  transform: scale(1.05);
+  background: #ef9e20;
+  color: #0a2a43;
+}
+
+/* Iconos dentro de los botones */
+.contacto-item i, .contacto-item span {
+  font-size: 1.2rem;
+}
+
+/* =========================
+   Modal Formulario
+   ========================= */
+.modal {
+  display: none; /* Oculto por defecto */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-contenido {
+  background: #f4f6f9;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.modal-contenido h3 {
+  margin-bottom: 20px;
+  color: #0a2a43;
+  text-align: center;
+}
+
+.modal-contenido input,
+.modal-contenido textarea {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  resize: none;
+}
+
+.modal-contenido button {
+  width: 100%;
+  padding: 12px;
+  background: #0a2a43;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-contenido button:hover {
+  background: #ef9e20;
+  color: #0a2a43;
+}
+
+.cerrar {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Botón flotante WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+  text-decoration: none; /* quitar subrayado */
+}
+
+
+#video-office {
+  background: linear-gradient(135deg, #f4f6f9 0%, #e9edf2 100%);
+  padding: 20px 20px; /* menos espacio arriba y abajo */
+  text-align: center;
+  border-radius: 16px;
+  margin: 20px 0; /* reduce espacio externo */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+#video-office h3 {
+  font-size: 1.6rem; /* un poco más pequeño */
+  color: #0a2a43;
+  margin-bottom: 15px; /* menos espacio debajo del título */
+  font-weight: 700;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 700px;  /* control del ancho */
+  height: 350px;     /* altura fija más proporcionada */
+  margin: 0 auto;    /* centra el contenedor */
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* se adapta bien aunque no sea 16:9 */
+  border-radius: 12px;
+}
+
+/* =========================
+   Responsividad General
+   ========================= */
+@media (max-width: 900px) {
+  .columnas {
+    grid-template-columns: 1fr; /* Una columna */
+    gap: 20px;
+  }
+
+  #catalogos .catalogo-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #inicio {
+    padding: 40px 15px;
+  }
+
+  #inicio h2 {
+    font-size: 1.6rem;
+  }
+
+  #inicio p {
+    font-size: 1rem;
+  }
+
+  #valores ul li,
+  #politicas .politica-card p {
+    font-size: 0.95rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: #0a2a43;
+    display: none;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.8rem;
+    color: #fff;
+  }
+
+  /* Texto */
+  section h2, section h3 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  section p, .empresa-info p, .empresa-info ul li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Sección catálogos */
+  #catalogos h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  #catalogos .catalogo h3 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+
+  #catalogos .catalogo-img {
+    height: 180px;
+  }
+
+  /* Sección inicio */
+  #inicio h2 {
+    font-size: 1.5rem;
+  }
+
+  #inicio p {
+    font-size: 0.95rem;
+  }
+
+  /* Sección políticas y valores */
+  #valores ul li,
+  #politicas .politica-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Botones o links importantes */
+  a, button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  #inicio {
+    padding: 30px 10px;
+  }
+
+  #inicio h2 {
+    font-size: 1.3rem;
+  }
+
+  #inicio p {
+    font-size: 0.9rem;
+  }
+
+  #catalogos .catalogo-img {
+    height: 150px;
+  }
+
+  #catalogos h2 {
+    font-size: 1.4rem;
+  }
+
+  #catalogos .catalogo h3 {
+    font-size: 1.1rem;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+  }
+ .empresa-info {
+    flex-direction: column;
+  }
+  .empresa-imagen {
+    width: 100%;
+  }
+
+  #video-office h3 {
+    font-size: 1.6rem;
+  }
+
+  .video-container {
+    max-width: 100%;
+    height: 220px; /* menos alto en móviles */
+  }
+
+}
