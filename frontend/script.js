@@ -14,14 +14,9 @@ hamburger.addEventListener("click", () => {
 window.addEventListener('load', () => {
   const loader = document.getElementById('loader');
 
-  // Mostrar 2 segundos y luego desaparecer
+  // Espera 2s y oculta con fade
   setTimeout(() => {
     loader.classList.add('oculto');
-
-    // Remover del DOM después del fade
-    setTimeout(() => {
-      loader.style.display = 'none';
-    }, 500);
   }, 2000);
 });
 
