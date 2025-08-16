@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GMDI&MM</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+
+<body>
+  <!-- Loader 
+  <div id="loader">
+  <div class="loader-background"></div>
+  <img src="/frontend/assets/img/logos/logo1.jpg" alt="Construction Logo" class="loader-logo">
+</div>-->
+
+
+  <!-- Header -->
+  <header>
+    <h1>GMDI&MM</h1>
+    
+    <!-- Hamburger button -->
+    <div class="hamburger" id="hamburger">
+      ☰
+    </div>
+
+    <!-- Navigation menu -->
+    <nav>
+      <ul id="nav-links">
+        <li><a href="#inicio">Home</a></li>
+        <li><a href="#nosotros">About Us</a></li>
+        <li><a href="#valores">Values</a></li>
+        <li><a href="#catalogos">Catalog</a></li>
+        <li><a href="#iso">Certifications</a></li>
+        <li><a href="#contacto">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="language-selector">
+      <button id="btn-es" class="flag">🇲🇽</button>
+      <button id="btn-en" class="flag">🇺🇸</button>
+      <button id="play-music">▶️Play</button>
+
+      <audio id="bg-music" src="assets/sounds/sound.mp3" loop></audio>
+
+      <script>
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("play-music");
+
+        btn.addEventListener("click", () => {
+          music.play();
+        });
+      </script>
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main>
+    <!-- Home -->
+    <section id="inicio">
+      <div class="inicio-container">
+        <div class="inicio-logo left">
+          <img src="assets/img/logos/logo1.jpg" alt="Logo 1" class="logo-inicio">
+        </div>
+
+        <div class="inicio-text">
+          <h2>GRUPO MENRO REAL ESTATE DEVELOPER / MM Comprehensive Civil Works</h2>
+          <h3 class="subtitle">
+            Members of the <strong>National Chamber of the Construction Industry</strong> with projects completed nationwide: <strong>state, federal, and civil</strong>.
+          </h3>
+          <p>
+            Our companies <strong>GRUPO MENRO REAL ESTATE DEVELOPER, S.A. DE C.V.</strong> and <strong>MM Comprehensive Civil Works S.A. de C.V.</strong> combine experience and professionalism in real estate development and comprehensive civil works.
+            We comply with major international standards, ensuring quality, safety, and sustainability in our projects, such as: <strong>ISO 9001, ISO 14001, ISO 45001, ISO 19650</strong>.
+          </p>
+          <h2>MM Comprehensive Civil Works</h2>
+          <p>
+            Our High-Value Structure integrates certifications in <strong>ISO 9001-2015, ISO 14001-2015, and ISO 45001-2018</strong>, guaranteeing quality, safety, and sustainability in our projects.
+          </p>
+        </div>
+
+        <div class="inicio-logo right">
+          <img src="assets/img/logos/logo2.jpg" alt="Logo 2" class="logo-inicio">
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us -->
+    <section id="nosotros">
+      <h2>GRUPO MENRO REAL ESTATE DEVELOPER, S.A. DE C.V.</h2>
+      <div class="company-info">
+        <div class="company-text">
+          <h3>About the Company</h3>
+          <p>
+            Founded in 2011 to address industry needs related to construction and maintenance of civil works in public and private sectors.  
+            At Grupo Menro, we have 14 years of experience and provide comprehensive services in executive project development, ensuring technical, legal, and economic feasibility. We turn your ideas into detailed documents, ready for execution, optimizing resources and minimizing risks.
+          </p>
+        </div>
+        <div class="company-image">
+          <img src="assets/img/GMDI/5.jpg" alt="Company Image">
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision and Mission -->
+    <section id="VisionMision">
+      <div class="columns">
+        <div>
+          <h3>Vision</h3>
+          <p>
+            To be a technologically proactive business group in national real estate development, ensuring sustainability and respecting client needs.
+          </p>
+        </div>
+        <div>
+          <h3>Mission</h3>
+          <p>
+            We are a business group dedicated to real estate development in the public and private sectors, attentive to client needs and current technical, safety, health, and environmental regulations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Office Video -->
+    <section id="video-office">
+      <h3>Offices and Recent Projects</h3>
+      <div class="video-container">
+        <video controls>
+          <source src="assets/img/office.mp4" type="video/mp4">
+          Your browser does not support this video.
+        </video>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section id="valores">
+      <h3>Our Values</h3>
+      <ul>
+        <li>Customer focus and team spirit</li>
+        <li>Honesty and reliability</li>
+        <li>Commitment to quality and innovation</li>
+        <li>Social and environmental responsibility</li>
+      </ul>
+    </section>
+
+    <!-- Policies -->
+    <section id="politicas">
+      <h3>Policies</h3>
+      <div class="policy-card">
+        <h4>Quality Policy</h4>
+        <p>Meet and satisfy customer needs ...</p>
+      </div>
+      <div class="policy-card">
+        <h4>Environmental Policy</h4>
+        <p>We acknowledge our responsibility to protect and care for the environment ...</p>
+      </div>
+      <div class="policy-card">
+        <h4>Safety Policy</h4>
+        <p>We are committed to the health and safety of our staff ...</p>
+      </div>
+    </section>
+
+    <!-- Catalogs -->
+    <section id="catalogos">
+      <h2>Project Catalogs</h2>
+      <div class="catalog-container">
+
+        <!-- GMDI -->
+        <div class="catalog" id="gmdi">
+          <h3>GMDI</h3>
+          <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <img src="assets/img/GMDI/1.jpg" alt="GMDI" class="catalog-img">
+            <img src="assets/img/GMDI/2.jpg" alt="GMDI" class="catalog-img">
+            <img src="assets/img/GMDI/3.jpg" alt="GMDI" class="catalog-img">
+            <img src="assets/img/GMDI/4.jpg" alt="GMDI" class="catalog-img">
+            <img src="assets/img/GMDI/5.jpg" alt="GMDI" class="catalog-img">
+            <img src="assets/img/GMDI/6.jpg" alt="GMDI" class="catalog-img">
+            <button class="next">&#10095;</button>
+          </div>
+        </div>
+
+        <!-- MM -->
+        <div class="catalog" id="mm">
+          <h3>MM</h3>
+          <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <img src="assets/img/MM/a.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/b.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/c.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/d.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/e.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/f.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/g.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/h.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/i.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/j.jpeg" alt="MM" class="catalog-img">
+            <img src="assets/img/MM/k.jpeg" alt="MM" class="catalog-img">
+            <button class="next">&#10095;</button>
+          </div>
+        </div>
+
+        <!-- Renders -->
+        <div class="catalog" id="renders">
+          <h3>Renders</h3>
+          <div class="carousel">
+            <button class="prev">&#10094;</button>
+            <img src="assets/img/render/rend1.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend2.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend3.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend4.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend5.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend6.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend7.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend8.jpeg" alt="Renders" class="catalog-img">
+            <img src="assets/img/render/rend9.jpeg" alt="Renders" class="catalog-img">
+            <button class="next">&#10095;</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ISO Certifications -->
+    <section id="iso">
+      <h3>ISO Certifications applied in MM Comprehensive Civil Works</h3>
+      <div class="iso-container">
+        <div class="iso-card">
+          <h4>ISO 9001-2015</h4>
+          <p>
+            International standard that sets requirements for a quality management system. 
+            Allows MM to ensure efficient processes, consistent project delivery, and client satisfaction.
+          </p>
+        </div>
+        <div class="iso-card">
+          <h4>ISO 14001-2015</h4>
+          <p>
+            Standard for environmental management systems, focused on reducing environmental impacts of company activities. 
+            Ensures MM operates sustainably and complies with environmental regulations.
+          </p>
+        </div>
+        <div class="iso-card">
+          <h4>ISO 45001-2018</h4>
+          <p>
+            Occupational health and safety management standard, designed to prevent workplace accidents and illnesses. 
+            Ensures our staff work in a safe and healthy environment while complying with legal regulations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contacto">
+      <h3>Contact Us</h3>
+      <div class="contact-container" id="contacto">
+        <a href="mailto:grupomenro25@gmail.com" class="contact-item">📧 Email: grupomenro25@gmail.com </a> 
+        <a href="https://wa.me/52524333250357" target="_blank" class="contact-item"> <i class="fa-brands fa-whatsapp"></i> WhatsApp: +52 4333250357 </a>
+        <button id="abrirFormulario" class="contact-item">📝 Send Message</button>
+      </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div id="modalFormulario" class="modal">
+      <div class="modal-content">
+        <span id="cerrarFormulario" class="close">&times;</span>
+        <h3>📬 Send Company Information</h3>
+        
+        <form id="formularioContacto">
+          <div class="form-group">
+            <label>👤 Name</label>
+            <input type="text" name="nombre" placeholder="Your name" required>
+          </div>
+          
+          <div class="form-group">
+            <label>📧 Email</label>
+            <input type="email" name="correo" placeholder="Your email" required>
+          </div>
+          
+          <div class="form-group">
+            <label>📞 Phone</label>
+            <input type="tel" name="telefono" placeholder="Your phone" required>
+          </div>
+          
+          <div class="form-group">
+            <label>📝 Brief Description</label>
+            <textarea name="descripcion" placeholder="Description" rows="4" required></textarea>
+          </div>
+          
+          <button type="submit" class="btn-send">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <section id="proyectos">
+      <h2>Our Projects</h2>
+
+      <div class="project-item">
+        <button class="prev">&#10094;</button>
+        <div class="carousel-track">
+          <div class="project">
+            <img src="assets/img/proyectos/1a.png" alt="Project 1" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1b.png" alt="Project 2" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1c.png" alt="Project 3" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1d.png" alt="Project 4" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1e.png" alt="Project 5" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1f.png" alt="Project 6" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1g.png" alt="Project 7" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1h.png" alt="Project 8" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1i.png" alt="Project 9" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1j.png" alt="Project 10" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1k.png" alt="Project 11" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1l.png" alt="Project 12" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1m.png" alt="Project 13" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1n.png" alt="Project 14" class="project-img">
+          </div>
+          <div class="project">
+            <img src="assets/img/proyectos/1o.png" alt="Project 15" class="project-img">
+          </div>
+        </div>
+        <button class="next">&#10095;</button>
+      </div>
+    </section>
+
+    <!-- Cámara -->
+    <section id="camara">
+      <div class="camara-container">
+        <h3>National Chamber of the Construction Industry</h3>
+        <img src="assets/img/logos/camara.png" alt="Chamber Logo" class="camara-logo">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GMDI&MM Construction - All rights reserved</p>
+  </footer>
+  <script src="script.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("5Zl3lDXLWB3yV2Of3"); // replace with your EmailJS user ID
+    })();
+  </script>
+  <a href="https://wa.me/524333250357" target="_blank" class="whatsapp-float">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
