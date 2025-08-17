@@ -245,30 +245,39 @@
 
 
     <div id="modalFormulario" class="modal">
-      <div class="modal-contenido">
-        <span id="cerrarFormulario" class="cerrar">&times;</span>
-        <h3>📬 Send Company Information</h3>
-        <form id="formularioContacto">
-          <div class="form-group">
-            <label>👤 Name</label>
-            <input type="text" name="nombre" placeholder="Your name" required>
-          </div>
-          <div class="form-group">
-            <label>📧 Email</label>
-            <input type="email" name="correo" placeholder="Your email" required>
-          </div>
-          <div class="form-group">
-            <label>📞 Phone</label>
-            <input type="tel" name="telefono" placeholder="Your phone" required>
-          </div>
-          <div class="form-group">
-            <label>📝 Brief Description</label>
-            <textarea name="descripcion" placeholder="Description" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn-enviar">Send</button>
-        </form>
+  <div class="modal-contenido">
+    <span id="cerrarFormulario" class="cerrar">&times;</span>
+    <h3>📬 Send Company Information</h3>
+    
+    <!-- Formulario conectado a Formspree -->
+    <form id="formularioContacto" action="https://formspree.io/f/mzzvqdkn" method="POST">
+      <div class="form-group">
+        <label>👤 Name</label>
+        <input type="text" name="nombre" placeholder="Your name" required>
       </div>
-    </div>
+      
+      <div class="form-group">
+        <label>📧 Email</label>
+        <input type="email" name="correo" placeholder="Your email" required>
+      </div>
+      
+      <div class="form-group">
+        <label>📞 Phone</label>
+        <input type="tel" name="telefono" placeholder="Your phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label>📝 Brief Description</label>
+        <textarea name="descripcion" placeholder="Description" rows="4" required></textarea>
+      </div>
+      
+      <button type="submit" class="btn-enviar">Send</button>
+
+      <div id="mensajeForm" class="mensaje-form"></div>
+    </form>
+  </div>
+</div>
+
 
     <section id="proyectos">
       <h2>Our Projects</h2>
