@@ -288,29 +288,34 @@
     <span id="cerrarFormulario" class="cerrar">&times;</span>
     <h3>📬 Enviar información de la empresa</h3>
     
-    <form id="formularioContacto">
-      <div class="form-group">
-        <label>👤 Nombre</label>
-        <input type="text" name="nombre" placeholder="Tu nombre" required>
-      </div>
-      
-      <div class="form-group">
-        <label>📧 Correo</label>
-        <input type="email" name="correo" placeholder="Tu correo" required>
-      </div>
-      
-      <div class="form-group">
-        <label>📞 Teléfono</label>
-        <input type="tel" name="telefono" placeholder="Tu teléfono" required>
-      </div>
-      
-      <div class="form-group">
-        <label>📝 Breve descripción</label>
-        <textarea name="descripcion" placeholder="Descripción" rows="4" required></textarea>
-      </div>
-      
-      <button type="submit" class="btn-enviar">Enviar</button>
-    </form>
+    <!-- Aquí ya conectamos con Formspree -->
+    <form id="formularioContacto" action="https://formspree.io/f/mzzvqdkn" method="POST">
+  <div class="form-group">
+    <label>👤 Nombre</label>
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+  </div>
+  
+  <div class="form-group">
+    <label>📧 Correo</label>
+    <input type="email" name="correo" placeholder="Tu correo" required>
+  </div>
+  
+  <div class="form-group">
+    <label>📞 Teléfono</label>
+    <input type="tel" name="telefono" placeholder="Tu teléfono" required>
+  </div>
+  
+  <div class="form-group">
+    <label>📝 Breve descripción</label>
+    <textarea name="descripcion" placeholder="Descripción" rows="4" required></textarea>
+  </div>
+  
+  <button type="submit" class="btn-enviar">Enviar</button>
+
+  <!-- 👇 Aquí se mostrarán los mensajes -->
+  <div id="mensajeForm" class="mensaje-form"></div>
+</form>
+
   </div>
 </div>
 
@@ -386,12 +391,8 @@
     <p>&copy; 2025 Constructora GMDI&MM - Todos los derechos reservados</p>
   </footer>
 <script src="script.js"></script>
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("5Zl3lDXLWB3yV2Of3"); // reemplaza con tu user ID de EmailJS
-  })();
-</script>
+
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const btnEs = document.getElementById("btn-es");
