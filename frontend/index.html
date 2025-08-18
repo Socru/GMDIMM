@@ -55,7 +55,87 @@
 
 </div>
 
+
+
   </header>
+<section class="empresas-selector">
+  <button class="boton-empresa gmdi-btn" onclick="scrollToSection('gmdi-h2')">GMDI</button>
+  <button class="boton-empresa mm-btn" onclick="scrollToSection('mm-h2')">MM</button>
+</section>
+
+<style>
+.empresas-selector {
+  text-align: center;
+  margin: 40px 0;
+}
+
+/* Botones más grandes y llamativos */
+.boton-empresa {
+  display: inline-block;
+  padding: 18px 36px;
+  margin: 12px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(45deg, #0a2a43, #004080);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto halo al pasar el mouse */
+.boton-empresa::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255,255,255,0.1);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+}
+
+.boton-empresa:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Hover GMDI: naranja #ef9e20 */
+.gmdi-btn:hover {
+  background: linear-gradient(45deg, #ef9e20, #ffd05b);
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Hover MM: rojo #ef2020 */
+.mm-btn:hover {
+  background: linear-gradient(45deg, #ef2020, #ff5a5a);
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+</style>
+
+
+<script>
+function scrollToSection(id) {
+  const element = document.getElementById(id);
+  if(!element) return;
+
+  const yOffset = -180; // Ajustar según altura del header
+  const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+</script>
+
+
+
+
 
   <!-- Main -->
   <main>
@@ -67,23 +147,15 @@
     </div>
 
     <div class="inicio-texto">
-      <h2>GRUPO MENRO DESARROLLADOR INMOBILIARIO / MM Obra Civil Integral</h2>
+      <h2 id="gmdi-h2">GRUPO MENRO DESARROLLADOR INMOBILIARIO </h2>
       <h3 class="subtitulo">
         Afiliados a la <strong>Cámara Nacional de la Industria de la Construcción</strong> y con proyectos realizados en toda la República: <strong>estatales, federales y civiles</strong>.
       </h3>
       <p>
-        Nuestras empresas <strong>GRUPO MENRO DESARROLLADOR INMOBILIARIO, S.A DE C.V</strong> y <strong>MM Obra Civil Integral S.A de C.V</strong> combinan experiencia y profesionalismo en proyectos de desarrollo inmobiliario y obra civil integral.
+        Nuestras empresas <strong>GRUPO MENRO DESARROLLADOR INMOBILIARIO, S.A DE C.V</strong>  combinan experiencia y profesionalismo en proyectos de desarrollo inmobiliario y obra civil integral.
         Cumplimos con las principales normas internacionales, garantizando calidad, seguridad y sostenibilidad en nuestros proyectos como son: <strong>ISO 9001, ISO 14001, ISO 45001, ISO 19650</strong>.
         </p>
-        <h2>MM Obra Civil Integral</h2>
-        <p>
-        Nuestra Estructura de Alto Valor integra las certificaciones en <strong>ISO 9001-2015, ISO 14001-2015, e ISO 45001-2018</strong>, garantizando calidad, seguridad y sostenibilidad en nuestros proyectos.
-        </p>
-    </div>
-
-    <div class="inicio-logo derecha">
-      <img src="assets/img/logos/logo2.jpg" alt="Logo 2" class="logo-inicio">
-    </div>
+      </div>
   </div>
 </section>
 
@@ -100,7 +172,7 @@
         En Grupo Menro, contamos con 14 años de experiencia y ofrecemos un servicio integral en desarrollo de proyectos ejecutivos que garantiza la viabilidad técnica, legal y económica de su construcción. Nos encargamos de convertir su idea en documentos detallados, listos para ejecución, optimizando recursos y minimizando riesgos.
       </p>
     </div>
-    <div class="empresa-imagen">
+    <div class="empresa-imagen" >
       <img src="assets/img/GMDI/5.jpg" alt="Imagen empresa">
     </div>
   </div>
@@ -180,25 +252,6 @@
       </div>
     </div>
 
-    <!-- MM -->
-    <div class="catalogo" id="mm">
-      <h3>MM</h3>
-      <div class="carousel">
-        <button class="prev">&#10094;</button>
-        <img src="assets/img/MM/a.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/b.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/c.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/d.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/e.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/f.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/g.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/h.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/i.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/j.jpeg" alt="MM" class="catalogo-img">
-        <img src="assets/img/MM/k.jpeg" alt="MM" class="catalogo-img">
-        <button class="next">&#10095;</button>
-      </div>
-    </div>
 
     <!-- Renders -->
     <div class="catalogo" id="renders">
@@ -220,103 +273,6 @@
 
   </div>
 </section>
-
-
-   <section id="iso">
-  <h3>Certificaciones ISO aplicadas en MM Obra Civil Integral</h3>
-  <div class="iso-container">
-    <div class="iso-card">
-      <h4>ISO 9001-2015</h4>
-      <p>
-        Norma internacional que establece los requisitos para un sistema de gestión de calidad. 
-        Permite a MM garantizar procesos eficientes, consistencia en la entrega de proyectos y la satisfacción de nuestros clientes.
-      </p>
-    </div>
-    <div class="iso-card">
-      <h4>ISO 14001-2015</h4>
-      <p>
-        Norma para sistemas de gestión ambiental, enfocada en reducir los impactos ambientales de la actividad de la empresa. 
-        Asegura que MM opere de manera sostenible y cumpla con las regulaciones ambientales.
-      </p>
-    </div>
-    <div class="iso-card">
-      <h4>ISO 45001-2018</h4>
-      <p>
-        Norma de gestión de seguridad y salud en el trabajo, diseñada para prevenir accidentes y enfermedades laborales. 
-        Garantiza que nuestro personal trabaje en un entorno seguro y saludable, cumpliendo con las regulaciones legales.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<section id="contacto">
-  <h3>Contáctanos</h3>
-  <div class="contacto-container">
-    
-    <!-- Correo -->
-    <a href="mailto:grupomenro25@gmail.com" class="contacto-item">
-      📧 Correo: grupomenro25@gmail.com
-    </a>
-
-    <!-- WhatsApp con icono local -->
-    <a href="https://wa.me/524421415871" target="_blank" class="contacto-item">
-      WhatsApp: +524421415871
-    </a>
-    <img src="assets/img/whats.jpeg" alt="WhatsApp" style="width:150px; height:150px; margin-right:8px; vertical-align:middle;">
-
-    <!-- Botón abrir formulario -->
-    <button id="abrirFormulario" class="contacto-item">
-      📝 Enviar mensaje
-    </button>
-  </div>
-
-  <!-- Mapa de Google -->
-  <div class="mapa-contacto" style="margin-top:20px;">
-    <h2>Nuestra Ubicación</h2>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d933.790816755557!2d-100.37991219319507!3d20.581389093956904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDM0JzUxLjAiTiAxMDDCsDIyJzQ0LjYiVw!5e0!3m2!1ses!2smx!4v1755359467850!5m2!1ses!2smx" 
-      width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</section>
-
-
-<!-- Modal del formulario -->
-<div id="modalFormulario" class="modal">
-  <div class="modal-contenido">
-    <span id="cerrarFormulario" class="cerrar">&times;</span>
-    <h3>📬 Enviar información de la empresa</h3>
-    
-    <!-- Aquí ya conectamos con Formspree -->
-    <form id="formularioContacto" action="https://formspree.io/f/mzzvqdkn" method="POST">
-  <div class="form-group">
-    <label>👤 Nombre</label>
-    <input type="text" name="nombre" placeholder="Tu nombre" required>
-  </div>
-  
-  <div class="form-group">
-    <label>📧 Correo</label>
-    <input type="email" name="correo" placeholder="Tu correo" required>
-  </div>
-  
-  <div class="form-group">
-    <label>📞 Teléfono</label>
-    <input type="tel" name="telefono" placeholder="Tu teléfono" required>
-  </div>
-  
-  <div class="form-group">
-    <label>📝 Breve descripción</label>
-    <textarea name="descripcion" placeholder="Descripción" rows="4" required></textarea>
-  </div>
-  
-  <button type="submit" class="btn-enviar">Enviar</button>
-
-  <div id="mensajeForm" class="mensaje-form"></div>
-</form>
-
-  </div>
-</div>
 
 
 <section id="proyectos">
@@ -398,6 +354,157 @@ a.descarga:hover {
 
 </div>
 </section>
+
+
+  <section id="inicio">
+    
+  <div class="inicio-container">
+    <div class="inicio-logo derecha">
+      <img src="assets/img/logos/logo2.jpg" alt="Logo 2" class="logo-inicio">
+    </div>
+    <div class="inicio-texto" >
+      <h2 id="mm-h2"> MM Obra Civil Integral</h2>
+      <h3 class="subtitulo">
+        Afiliados a la <strong>Cámara Nacional de la Industria de la Construcción</strong> y con proyectos realizados en toda la República: <strong>estatales, federales y civiles</strong>.
+      </h3>
+        <p>
+        Nuestra Estructura de Alto Valor integra las certificaciones en <strong>ISO 9001-2015, ISO 14001-2015, e ISO 45001-2018</strong>, garantizando calidad, seguridad y sostenibilidad en nuestros proyectos.
+        </p>
+    </div>
+  </div>
+</section>
+
+<section id="catalogos">
+  <h2>Catálogos de Proyectos</h2>
+  <div class="catalogo-container">
+
+    <!-- MM -->
+    <div class="catalogo" id="mm">
+      <h3>MM</h3>
+      <div class="carousel">
+        <button class="prev">&#10094;</button>
+        <img src="assets/img/MM/a.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/b.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/c.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/d.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/e.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/f.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/g.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/h.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/i.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/j.jpeg" alt="MM" class="catalogo-img">
+        <img src="assets/img/MM/k.jpeg" alt="MM" class="catalogo-img">
+        <button class="next">&#10095;</button>
+      </div>
+    </div>
+
+   
+
+  </div>
+</section>
+
+
+
+   <section id="iso">
+  <h3>Certificaciones ISO aplicadas en MM Obra Civil Integral</h3>
+  <div class="iso-container">
+    <div class="iso-card">
+      <h4>ISO 9001-2015</h4>
+      <p>
+        Norma internacional que establece los requisitos para un sistema de gestión de calidad. 
+        Permite a MM garantizar procesos eficientes, consistencia en la entrega de proyectos y la satisfacción de nuestros clientes.
+      </p>
+    </div>
+    <div class="iso-card">
+      <h4>ISO 14001-2015</h4>
+      <p>
+        Norma para sistemas de gestión ambiental, enfocada en reducir los impactos ambientales de la actividad de la empresa. 
+        Asegura que MM opere de manera sostenible y cumpla con las regulaciones ambientales.
+      </p>
+    </div>
+    <div class="iso-card">
+      <h4>ISO 45001-2018</h4>
+      <p>
+        Norma de gestión de seguridad y salud en el trabajo, diseñada para prevenir accidentes y enfermedades laborales. 
+        Garantiza que nuestro personal trabaje en un entorno seguro y saludable, cumpliendo con las regulaciones legales.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section id="contacto">
+  <h3>Contáctanos</h3>
+  <div class="contacto-container">
+    
+    <!-- Correo -->
+    <a href="mailto:grupomenro25@gmail.com" class="contacto-item">
+      📧 Correo: grupomenro25@gmail.com
+    </a>
+    <a href="tel:+524333250357" class="contacto-item">
+  📞 Teléfono: (433) 325 0357
+  </a>
+
+    <!-- WhatsApp con icono local -->
+    <a href="https://wa.me/524421415871" target="_blank" class="contacto-item">
+      WhatsApp: +524421415871
+    </a>
+    <img src="assets/img/whats.jpg" alt="WhatsApp" style="width:150px; height:150px; margin-right:8px; vertical-align:middle;">
+
+    <!-- Botón abrir formulario -->
+    <button id="abrirFormulario" class="contacto-item">
+      📝 Enviar mensaje
+    </button>
+  </div>
+
+  <!-- Mapa de Google -->
+  <div class="mapa-contacto" style="margin-top:20px;">
+    <h2>Nuestra Ubicación</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d933.790816755557!2d-100.37991219319507!3d20.581389093956904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjDCsDM0JzUxLjAiTiAxMDDCsDIyJzQ0LjYiVw!5e0!3m2!1ses!2smx!4v1755359467850!5m2!1ses!2smx" 
+      width="100%" height="350" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</section>
+
+
+<!-- Modal del formulario -->
+<div id="modalFormulario" class="modal">
+  <div class="modal-contenido">
+    <span id="cerrarFormulario" class="cerrar">&times;</span>
+    <h3>📬 Enviar información de la empresa</h3>
+    
+    <!-- Aquí ya conectamos con Formspree -->
+    <form id="formularioContacto" action="https://formspree.io/f/mzzvqdkn" method="POST">
+  <div class="form-group">
+    <label>👤 Nombre</label>
+    <input type="text" name="nombre" placeholder="Tu nombre" required>
+  </div>
+  
+  <div class="form-group">
+    <label>📧 Correo</label>
+    <input type="email" name="correo" placeholder="Tu correo" required>
+  </div>
+  
+  <div class="form-group">
+    <label>📞 Teléfono</label>
+    <input type="tel" name="telefono" placeholder="Tu teléfono" required>
+  </div>
+  
+  <div class="form-group">
+    <label>📝 Breve descripción</label>
+    <textarea name="descripcion" placeholder="Descripción" rows="4" required></textarea>
+  </div>
+  
+  <button type="submit" class="btn-enviar">Enviar</button>
+
+  <div id="mensajeForm" class="mensaje-form"></div>
+</form>
+
+  </div>
+</div>
+
+
 
 <section id="camara">
   <div class="camara-container">
