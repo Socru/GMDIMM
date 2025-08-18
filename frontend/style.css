@@ -489,7 +489,7 @@ section:not(#inicio) strong {
 }
 
 #inicio h2 {
-  font-size: 2rem; /* tamaño más cercano al resto del sitio */
+  font-size: 3rem; /* tamaño más cercano al resto del sitio */
   color: #0a2a43;
   margin-bottom: 0px;
   font-weight: 700;
@@ -551,17 +551,17 @@ section:not(#inicio) strong {
 }
 
 #inicio .logo-inicio {
-  height: 170px; /* ajusta según tu preferencia */
+  height: 18rem; /* ajusta según tu preferencia */
   width: auto;
   animation: floatLogo 2s ease-in-out infinite alternate;
 }
 
 .inicio-logo.derecha {
-  margin-top: 35rem; /* 25rem × 16px ≈ 400px */
+  margin-top: 1rem; /* 25rem × 16px ≈ 400px */
 }
 
 .inicio-logo.izquierda {
-  margin-top: 5rem; /* no cambia */
+  margin-top: 2rem; /* no cambia */
 }
 /* Animación suave de los logos */
 @keyframes floatLogo {
@@ -993,7 +993,7 @@ button:hover, .btn:hover {
 .catalogo {
   position: relative;
   flex: 1 1 33%;
-  max-width: 350px;
+  max-width: 33rem;
   margin: 0 auto;
   background: #fff;
   border-radius: 12px;
@@ -1104,16 +1104,17 @@ button:hover, .btn:hover {
 
 .proyecto {
   flex: 0 0 100%; /* ocupa todo el ancho del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.proyecto-img {
-  width: auto;
-  max-width: 100%;
-  height: 400px;
+#proyectos .proyecto-img {
+  width: 100%;
+  height: auto;
+  max-height: 40rem; 
   object-fit: contain;
-  border-radius: 10px;
 }
-
 .proyecto-img:hover {
   transform: scale(1.03);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
@@ -1156,6 +1157,19 @@ button:hover, .btn:hover {
 
 
 
+
+
+.mensaje-form {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+
+
+
 /* =========================
    Responsividad General
    ========================= */
@@ -1171,6 +1185,14 @@ button:hover, .btn:hover {
     flex-direction: column;
     gap: 20px;
   }
+
+
+#inicio .logo-inicio {
+  height: 12rem; /* ajusta según tu preferencia */
+  width: auto;
+  animation: floatLogo 2s ease-in-out infinite alternate;
+}
+
 
   #inicio {
     padding: 40px 15px;
@@ -1359,9 +1381,9 @@ button:hover, .btn:hover {
 
   /* Imagen más grande y escalada correctamente */
   #proyectos .proyecto-img {
-  width: 200%;
+  width: 110%;
   height: auto;
-  max-height: 800px; /* más grande que antes */
+  max-height: 12rem; /* más grande que antes */
   object-fit: contain;
 }
 
