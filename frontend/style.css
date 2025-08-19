@@ -1157,6 +1157,97 @@ button:hover, .btn:hover {
 
 
 
+/* Contenedor principal del carrusel aislado */
+#proyectosmm {
+  padding: 50px 20px;
+  text-align: center;
+  background: #f8f9fa;
+}
+
+#proyectosmm h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #0a2a43;
+}
+
+/* --- ESTILO TIPO "CATÁLOGO" --- */
+.proyectomm-item {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proyectomm-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Carrete de imágenes */
+.proyectomm-item .carrete-track {
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.proyectomm-item .proyecto {
+  flex: 0 0 100%; /* ocupa todo el ancho del contenedor */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proyectomm-item .proyecto-img {
+  width: 100%;
+  height: auto;
+  max-height: 40rem;
+  object-fit: contain;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.proyectomm-item .proyecto-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Botones prev/next */
+.proyectomm-item > .prev,
+.proyectomm-item > .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(10, 42, 67, 0.3);
+  color: #fff;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.proyectomm-item > .prev:hover,
+.proyectomm-item > .next:hover {
+  background: rgba(10, 42, 67, 0.6);
+  transform: translateY(-50%) scale(1.2);
+}
+
+.proyectomm-item > .prev {
+  left: 10px;
+}
+
+.proyectomm-item > .next {
+  right: 10px;
+}
 
 
 .mensaje-form {
@@ -1387,4 +1478,10 @@ button:hover, .btn:hover {
   object-fit: contain;
 }
 
+ #proyectosmm .proyecto-img {
+  width: 110%;
+  height: auto;
+  max-height: 12rem; /* más grande que antes */
+  object-fit: contain;
+}
 }
